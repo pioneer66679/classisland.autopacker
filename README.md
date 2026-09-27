@@ -68,7 +68,7 @@
 ## 从源码编译
 
 ```powershell
-git clone <本仓库地址>
+git clone https://github.com/你的用户名/ClassIsland.AutoPacker.git
 cd ClassIsland.AutoPacker
 dotnet build -c Release
 ```
