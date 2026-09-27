@@ -9,6 +9,25 @@
 
 ---
 
+## 和原版备份的区别
+
+ClassIsland 本身**有**自动备份功能（设置里可以配置间隔、上限，也能手动备份），
+但它备份的是**应用数据**——档案、配置这些，存到应用自己的备份目录里。
+
+本插件做的是**另一件事**：把**整个 ClassIsland 程序目录**（含主程序本体、`data` 里的配置与插件）
+打包成一个可以随便拷走的 zip。
+
+| | 原版自动备份 | 本插件 |
+| --- | --- | --- |
+| 备份内容 | 档案、配置等应用数据 | **整个程序目录**（主程序 + data + 插件） |
+| 存放位置 | 应用自己的备份目录 | 你指定的任意文件夹 |
+| 用途 | 出问题时回滚数据 | **整个环境搬到另一台机器 / 教室大屏** |
+| 能否直接解压就用 | ❌ 需要重新装一份 ClassIsland | ✅ 解压出来就是一份能跑的完整环境 |
+
+简单说：原版备份是「**保命**」，本插件是「**搬家**」。
+
+---
+
 ## 功能
 
 - **一键打包**：点一下就把 ClassIsland 装好配置的整个目录压成一个 zip。
@@ -70,7 +89,7 @@
 ## 从源码编译
 
 ```powershell
-git clone https://github.com/你的用户名/ClassIsland.AutoPacker.git
+git clone https://github.com/pioneer66679/classisland.autopacker.git
 cd ClassIsland.AutoPacker
 dotnet build -c Release
 ```
